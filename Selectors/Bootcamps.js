@@ -11,7 +11,7 @@ exports.getAllBootcamps = async () => {
 };
 
 exports.getBootcampById = async (_id) => {
-  const bootcamp = await Bootcamp.findById(id).exec();
+  const bootcamp = await Bootcamp.findById(_id).exec();
   return bootcamp;
 };
 

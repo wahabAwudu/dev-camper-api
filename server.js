@@ -2,6 +2,7 @@ const express = require("express");
 const dotenv = require("dotenv");
 const morgan = require("morgan");
 const connectDb = require("./config/db");
+const errorHandler = require("./middlewares/error");
 
 dotenv.config({ path: "./.env" });
 
@@ -27,6 +28,10 @@ app.use(express.json());
 // register routes
 app.use("/api/v1/bootcamps", bootcampRoutes);
 app.use("/api/v1/auth", authRoutes);
+
+// use controller error handler middleware.
+// should come after routes in order to work.
+app.use(errorHandler);
 
 const PORT = process.env.PORT || 5000;
 

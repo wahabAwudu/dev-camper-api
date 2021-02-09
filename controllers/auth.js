@@ -1,4 +1,4 @@
-const { successResponse } = require("./utils");
+const successResponse = require("../utils/successResponse");
 
 // @desc login user
 // @route POST /api/v1/auth/login
