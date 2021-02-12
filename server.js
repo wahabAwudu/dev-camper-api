@@ -22,7 +22,8 @@ const app = express();
 if (process.env.NODE_ENV === "dev" || process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
 }
-// in build middleware to parse request body.
+
+// in built middleware to parse request body to json.
 app.use(express.json());
 
 // register routes
