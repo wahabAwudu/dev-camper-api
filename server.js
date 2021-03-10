@@ -12,8 +12,9 @@ connectDb();
 // get middlewares
 // const loggerMiddleWare = require("./middlewares/logger");
 // get routes
-const bootcampRoutes = require("./routes/bootcamps");
-const authRoutes = require("./routes/auth");
+const bootcampRoutes = require("./bootcamps/routes");
+const authRoutes = require("./accounts/routes");
+const courseRoutes = require("./courses/routes");
 
 const app = express();
 
@@ -29,6 +30,7 @@ app.use(express.json());
 // register routes
 app.use("/api/v1/bootcamps", bootcampRoutes);
 app.use("/api/v1/auth", authRoutes);
+app.use("/api/v1/courses", courseRoutes);
 
 // use controller error handler middleware.
 // should come after routes in order to work.
